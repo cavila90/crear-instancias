@@ -1,15 +1,15 @@
 version: '3'
 services:
   db:
-    container_name: ${DB_HOST}
-    image: ${DB_IMAGE}
+    container_name: tech.stinnovasv.com
+    image: 14.0
     environment:
-      - POSTGRES_DB=${DB_NAME}
-      - POSTGRES_PASSWORD=${DB_PASSWD}
-      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_DB=odoo
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
       - PGDATA=/var/lib/postgresql/data/pgdata
     ports:
-      - "${DB_PORT}:5432"
+      - "5501:5432"
     volumes:
       - db-data:/var/lib/postgresql/data/pgdata
     networks:
